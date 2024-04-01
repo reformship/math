@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <title>Differential Equations</title>
     <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -10,43 +12,150 @@
             src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 </head>
-<body>
-<p>
-    1. Ordinary Differential Equations (ODEs)
-    <br>
-    Ordinary Differential Equations (ODEs) involve functions of a single variable and their derivatives. They are called "ordinary" to distinguish them from partial differential equations, which involve multiple variables. ODEs are classified based on their order, which is the highest derivative of the function that appears in the equation.
-    <br>
-    First-Order ODEs: These involve only the first derivative of the function. An example is $$\frac{dy}{dx}=f(x,y)$$ $$\frac{dy}{dx}=f(x,y)$$, which describes curves in the xy-plane where the slope at any point is given by f(x,y)f(x,y).
-    Second-Order and Higher ODEs: These involve second or higher derivatives. They frequently appear in physics; for example, Newton's second law of motion leads to second-order differential equations.
-    logistic
-    
-    <br>
-    2. Partial Differential Equations (PDEs)
-    <br>
-    Partial Differential Equations (PDEs) involve functions of multiple variables and their partial derivatives. They are essential in the mathematical modelling of systems in which changes occur in more than one direction, such as the propagation of heat or waves.
-    <br>
-    Linear PDEs: Where the dependent variable and its derivatives appear linearly. The classic examples are the heat equation, wave equation, and Laplace's equation.
-    Nonlinear PDEs: These are more complex, as the dependent variable or its derivatives appear nonlinearly. The Navier-Stokes equations for fluid flow are a famous example.
-    <br>
-    3. Linear Differential Equations
-    <br>
-    Linear Differential Equations can be ordinary or partial and are characterized by the linear appearance of the dependent variable and its derivatives. They do not contain products or other nonlinear functions of the variable and its derivatives. Linear equations are easier to solve than nonlinear equations and have well-developed solution techniques.
-    4. Nonlinear Differential Equations
-    <br>
-    Nonlinear Differential Equations are those in which the dependent variable or its derivatives appear in a nonlinear form. These equations are generally more difficult to solve analytically, and solutions often require numerical methods. Nonlinear equations can exhibit complex behavior such as chaos.
-    5. Homogeneous and Non-Homogeneous Differential Equations
-    <br>
-    Homogeneous Differential Equations: These have terms that depend only on the function and its derivatives. In the context of linear differential equations, a homogeneous equation is one in which every term is a function of the dependent variable and its derivatives, with no constant or standalone variable terms.
-    Non-Homogeneous Differential Equations: These include additional terms that do not depend solely on the function and its derivatives. These terms can represent external forces or inputs in physical systems.
-    <br>
-    Applications and Solving Methods
-    <br>
-    Each type of differential equation has its solving methods, ranging from analytical solutions for simpler equations to numerical methods for more complex cases. Applications are vast, including:
-    <br>
-    ODEs: Modeling population dynamics, radioactive decay, or mechanical systems.
-    PDEs: Describing phenomena like fluid flow, heat distribution, or electromagnetic fields.
-    <br>
-    Understanding the type of differential equation at hand is crucial for choosing the appropriate solution method and interpreting the results within the context of the problem being solved.
-</p>
+<body class="single is-preload">
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="links">
+            <ul>
+                <li><a href="#">Math</a></li>
+                <li><a href="#">Example Models</a></li>
+                <li><a href="#">Problems</a></li>
+                <li><a href="#">Real Life Applications</a></li>
+                <li><a href="#">Comments</a></li>
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" />
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+
+        <!-- Search -->
+        <section>
+            <form class="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+            </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+            <ul class="links">
+                <li>
+                    <a href="#">
+                        <h3>Lorem ipsum</h3>
+                        <p>Feugiat tempus veroeros dolor</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Dolor sit amet</h3>
+                        <p>Sed vitae justo condimentum</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Feugiat veroeros</h3>
+                        <p>Phasellus sed ultricies mi congue</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>Etiam sed consequat</h3>
+                        <p>Porta lectus amet ultricies</p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="actions stacked">
+                <li><a href="#" class="button large fit">Log In</a></li>
+            </ul>
+        </section>
+
+    </section>
+    <div id="main">
+
+        <!-- Post -->
+        <article class="post">
+            <header>
+                <div class="title">
+                    <h2><a href="#">Differential Equations</a></h2>
+                    <p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
+                </div>
+                <div class="meta">
+                    <time class="published" datetime="2024-03-31">March 31, 2024</time>
+
+                </div>
+            </header>
+            <span class="image featured" style="align-self: center"><img src="images/diff.png" alt="diff1" /></span>
+            <h2>Solving differential equations:</h2>
+            <hr>
+            <h3>Euler's Method</h3>
+            <h3>Seperation of variables</h3>
+            <p>
+                1. Ordinary Differential Equations (ODEs)
+                <br>
+                Ordinary Differential Equations (ODEs) involve functions of a single variable and their derivatives. They are called "ordinary" to distinguish them from partial differential equations, which involve multiple variables. ODEs are classified based on their order, which is the highest derivative of the function that appears in the equation.
+                <br>
+                First-Order ODEs: These involve only the first derivative of the function. An example is $$\frac{dy}{dx}=f(x,y)$$ $$\frac{dy}{dx}=f(x,y)$$, which describes curves in the xy-plane where the slope at any point is given by f(x,y)f(x,y).
+                Second-Order and Higher ODEs: These involve second or higher derivatives. They frequently appear in physics; for example, Newton's second law of motion leads to second-order differential equations.
+                logistic
+
+                <br>
+                2. Partial Differential Equations (PDEs)
+                <br>
+                Partial Differential Equations (PDEs) involve functions of multiple variables and their partial derivatives. They are essential in the mathematical modelling of systems in which changes occur in more than one direction, such as the propagation of heat or waves.
+                <br>
+                Linear PDEs: Where the dependent variable and its derivatives appear linearly. The classic examples are the heat equation, wave equation, and Laplace's equation.
+                Nonlinear PDEs: These are more complex, as the dependent variable or its derivatives appear nonlinearly. The Navier-Stokes equations for fluid flow are a famous example.
+                <br>
+                3. Linear Differential Equations
+                <br>
+                Linear Differential Equations can be ordinary or partial and are characterized by the linear appearance of the dependent variable and its derivatives. They do not contain products or other nonlinear functions of the variable and its derivatives. Linear equations are easier to solve than nonlinear equations and have well-developed solution techniques.
+                <br>
+                4. Nonlinear Differential Equations
+                <br>
+                Nonlinear Differential Equations are those in which the dependent variable or its derivatives appear in a nonlinear form. These equations are generally more difficult to solve analytically, and solutions often require numerical methods. Nonlinear equations can exhibit complex behavior such as chaos.
+                5. Homogeneous and Non-Homogeneous Differential Equations
+                <br>
+                Homogeneous Differential Equations: These have terms that depend only on the function and its derivatives. In the context of linear differential equations, a homogeneous equation is one in which every term is a function of the dependent variable and its derivatives, with no constant or standalone variable terms.
+                Non-Homogeneous Differential Equations: These include additional terms that do not depend solely on the function and its derivatives. These terms can represent external forces or inputs in physical systems.
+                <br>
+                Applications and Solving Methods
+                <br>
+                Each type of differential equation has its solving methods, ranging from analytical solutions for simpler equations to numerical methods for more complex cases. Applications are vast, including:
+                <br>
+                ODEs: Modeling population dynamics, radioactive decay, or mechanical systems.
+                PDEs: Describing phenomena like fluid flow, heat distribution, or electromagnetic fields.
+                <br>
+                Understanding the type of differential equation at hand is crucial for choosing the appropriate solution method and interpreting the results within the context of the problem being solved.
+            </p><footer>
+                <ul class="stats">
+                    <li><a href="#">General</a></li>
+                    <li><a href="#" class="icon solid fa-heart">28</a></li>
+                    <li><a href="#" class="icon solid fa-comment">128</a></li>
+                </ul>
+            </footer>
+        </article>
+
+    </div>
+
+
 </body>
 </html>
