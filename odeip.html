@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistic Population Growth</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider-label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logistic Population Growth Model</h1>
+    <div id="plot"></div>
+    <div class="slider-container">
+        <span class="slider-label">Growth rate (r): </span>
+        <input type="range" id="r-slider" min="0.01" max="1.0" step="0.01" value="0.1" oninput="updatePlot()">
+        <span id="r-value">0.1</span>
+    </div>
+    <div class="slider-container">
+        <span class="slider-label">Initial population (N0): </span>
+        <input type="range" id="N0-slider" min="1" max="100" step="1" value="10" oninput="updatePlot()">
+        <span id="N0-value">10</span>
+    </div>
+    <div class="slider-container">
+        <span class="slider-label">Carrying capacity (K): </span>
+        <input type="range" id="K-slider" min="50" max="500" step="10" value="100" oninput="updatePlot()">
+        <span id="K-value">100</span>
+    </div>
+
+    <script>
+        function logisticGrowth(t, r, N0, K) {
+            return K / (1 + ((K - N0) / N0) * Math.exp(-r * t));
+        }
+
+        function updatePlot() {
+            var r = parseFloat(document.getElementById('r-slider').value);
+            var N0 = parseFloat(document.getElementById('N0-slider').value);
+            var K = parseFloat(document.getElementById('K-slider').value);
+
+            document.getElementById('r-value').textContent = r;
+            document.getElementById('N0-value').textContent = N0;
+            document.getElementById('K-value').textContent = K;
+
+            var t = Array.from({length: 400}, (_, i) => i * 0.25);
+            var N = t.map(time => logisticGrowth(time, r, N0, K));
+
+            var trace = {
+                x: t,
+                y: N,
+                mode: 'lines',
+                type: 'scatter'
+            };
+
+            var layout = {
+                title: 'Logistic Population Growth',
+                xaxis: {title: 'Time (t)'},
+                yaxis: {title: 'Population (N)'}
+            };
+
+            Plotly.newPlot('plot', [trace], layout);
+        }
+
+        window.onload = updatePlot;
+    </script>
+</body>
+</html>
